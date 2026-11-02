@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Karunya Swaminathan — law student interested in corporate law, finance and governance.">
+  <title>Karunya Swaminathan | Law, Finance & Governance</title>
+  <style>
+    :root {
+      --ink: #222722;
+      --muted: #64706b;
+      --paper: #f5f1e8;
+      --white: #fffefa;
+      --line: #deded5;
+      --accent: #8b5e43;
+      --accent-light: #e9ddd2;
+      --dark: #17263b;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; }
+    .wrap { width: min(1100px, calc(100% - 44px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 5; background: rgba(245,243,238,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-family: var(--serif); font-size: 1.2rem; text-decoration: none; letter-spacing: -.02em; }
+    .navlinks { display: flex; gap: 23px; flex-wrap: wrap; }
+    .navlinks a { font-size: .83rem; text-decoration: none; color: var(--muted); }
+    .navlinks a:hover, a:hover { color: var(--accent); }
+    .hero { padding: 105px 0 88px; background: var(--dark); color: #f8f6ef; position: relative; overflow: hidden; }
+    .hero:after { content: ""; position: absolute; width: 470px; height: 470px; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; right: -100px; top: -230px; box-shadow: 0 0 0 45px rgba(255,255,255,.025), 0 0 0 95px rgba(255,255,255,.02); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .19em; font-size: .72rem; color: #c9b9a9; font-weight: 650; }
+    h1 { font: 500 clamp(3rem, 7vw, 5.7rem)/1.03 var(--serif); letter-spacing: -.055em; max-width: 850px; margin: 20px 0; }
+    .hero p { color: #d5d9d4; max-width: 650px; font-size: 1.08rem; }
+    .hero-actions { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 11px 18px; border: 1px solid #bda58f; text-decoration: none; font-size: .86rem; border-radius: 2px; }
+    .btn.primary { background: #e8d9ca; color: #17263b; border-color: #e8d9ca; }
+    .section { padding: 78px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 190px 1fr; gap: 35px; margin-bottom: 35px; }
+    .section-label { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-size: .72rem; font-weight: 700; padding-top: 9px; }
+    h2 { font: 500 clamp(2rem, 4vw, 3.2rem)/1.1 var(--serif); letter-spacing: -.04em; margin: 0; }
+    .lead { max-width: 760px; font-size: 1.05rem; color: #45514c; }
+    .about-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 55px; align-items: start; }
+    .note { background: var(--accent-light); padding: 25px; border-left: 3px solid var(--accent); }
+    .note strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; display: block; margin-bottom: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .card { background: var(--white); border: 1px solid var(--line); padding: 24px; }
+    .card .kicker { color: var(--accent); font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
+    .card h3 { font: 500 1.55rem var(--serif); margin: 9px 0 7px; }
+    .card p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .timeline { border-top: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 190px 1fr; gap: 35px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .date { color: var(--muted); font-size: .83rem; }
+    .role h3 { margin: 0; font: 500 1.45rem var(--serif); }
+    .org { color: var(--accent); font-size: .9rem; margin: 3px 0 10px; }
+    .role ul { margin: 0; padding-left: 19px; color: #4e5954; font-size: .91rem; }
+    .role li { margin: 5px 0; }
+    .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .research-card { min-height: 190px; padding: 23px; background: var(--dark); color: #f8f6ef; display: flex; flex-direction: column; justify-content: space-between; }
+    .research-card span { color: #c9b9a9; font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; }
+    .research-card h3 { font: 500 1.5rem/1.2 var(--serif); margin: 18px 0 0; }
+    .project-note { background: var(--white); border: 1px dashed #b8b6aa; padding: 22px; color: var(--muted); margin-top: 18px; font-size: .9rem; }
+    .contact { background: var(--accent-light); padding: 38px; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+    .contact h2 { max-width: 560px; }
+    footer { padding: 25px 0; color: var(--muted); font-size: .78rem; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 30px, 1100px); }
+      .navlinks { gap: 12px; }
+      .navlinks a { font-size: .75rem; }
+      .hero { padding: 75px 0 68px; }
+      .section-head, .about-grid, .role { grid-template-columns: 1fr; gap: 12px; }
+      .cards, .research-grid { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">Karunya Speaking</a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#reading">Reading</a><a href="#poetry">Poetry</a><a href="#more">More</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Law · Finance · Corporate Governance</div>
+      <h1>Understanding the business behind the law.</h1>
+      <p>I'm Karunya — a BBA LL.B. student at Symbiosis International University, pursuing the Company Secretary qualification and exploring the connections between corporate law, finance and business decisions.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#experience">Explore my experience</a>
+        <a class="btn" href="https://www.linkedin.com/in/karunya-swaminathan/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">01 / About</div><h2>A curious mind, usually asking one more question.</h2></div>
+      <div class="about-grid">
+        <div class="lead">
+          <p>I have a habit of looking at a business decision and asking three questions: What does the law say? What does the money say? And what happens when the two disagree?</p>
+          <p>That curiosity led me to pursue a BBA LL.B. at Symbiosis International University and the Company Secretary qualification through ICSI. My interests sit at the intersection of corporate law, finance and business strategy.</p>
+          <p>My experience so far has taken me from judicial research at the Madras High Court and NCLAT to corporate documentation, statutory filings, commercial contracts and financial reporting. Each setting has offered a different view of how law works beyond textbooks.</p>
+          <p>Research is another part of my journey. I am interested in questions around AI and online contracts, cryptocurrency governance, greenwashing and corporate accountability. I enjoy writing, history and the occasional research rabbit hole that turns out to be much more interesting than expected.</p>
+          <p>Long term, I hope to work where legal analysis meets commercial judgement — helping make decisions that are both legally sound and commercially meaningful.</p>
+        </div>
+        <aside class="note">
+          <strong>Currently learning</strong>
+          Corporate transactions, company law, financial statement analysis, valuation and the regulatory frameworks that shape businesses.
+          <hr style="border:0;border-top:1px solid #cdb9a8;margin:20px 0">
+          <strong>Education</strong>
+          BBA LL.B. · Symbiosis International University<br>
+          Expected graduation: May 2028<br><br>
+          CS Executive · ICSI<br>
+          Currently preparing both groups
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">02 / Experience</div><h2>Learning by doing, across legal and corporate settings.</h2></div>
+      <div class="timeline">
+        <article class="role"><div class="date">June 2026 – July 2026</div><div><h3>Summer Intern</h3><div class="org">TAKRAF Group · Finance & Company Secretarial</div><ul><li>Reviewed approximately 30 Indian and international purchase orders, two vendor agreements and a commercial contract, identifying contractual, commercial and compliance considerations.</li><li>Supported supplier ESG due diligence and assessed information requested for organisational disclosure.</li><li>Examined data protection considerations under India's Digital Personal Data Protection Act, including safeguards concerning employees' minor dependants.</li><li>Researched company law, SEBI regulations, ESG compliance, arbitration and data protection, while supporting tax-compliance tracking and financial statement reviews.</li></ul></div></article>
+        <article class="role"><div class="date">December 2025 – January 2026</div><div><h3>Judicial Intern to Hon'ble Justice C. Saravanan</h3><div class="org">High Court of Judicature at Madras</div><ul><li>Researched GST Section 74 proceedings, input tax credit disputes, refund litigation and questions concerning alleged tax fraud.</li><li>Examined the extended limitation period under Section 28(4) of the Customs Act, 1962, in the Fastene Private Limited batch matter.</li><li>Prepared research notes analysing statutory provisions, judicial precedents and limitation issues.</li><li>Assisted in reviewing draft judicial orders for factual consistency, legal coherence and accurate statutory references.</li></ul></div></article>
+        <article class="role"><div class="date">June 2025 – July 2025</div><div><h3>Judicial Intern to Hon'ble Justice Sharad Kumar Sharma</h3><div class="org">National Company Law Appellate Tribunal (NCLAT)</div><ul><li>Prepared approximately 15 case briefs and legal research notes for appellate matters.</li><li>Researched Section 7 insolvency proceedings under the Insolvency and Bankruptcy Code, 2016, including creditor disputes and corporate debtor defences.</li><li>Analysed Sections 30 and 31 of the IBC concerning resolution-plan approval and the Committee of Creditors.</li><li>Followed appellate proceedings involving insolvency, restructuring and infrastructure-related debt disputes, maintaining cause-list trackers.</li></ul></div></article>
+        <article class="role"><div class="date">May 2025 – June 2025</div><div><h3>Corporate Legal & Secretarial Intern</h3><div class="org">Office of CS Parath Kumar</div><ul><li>Prepared and e-filed MCA forms including AOC-4, MGT-7, DIR-12, DIR KYC, ADT-1 and LLP Form 11.</li><li>Assisted in drafting Memorandums of Association and modifying investment agreement clauses for investor and joint-venture requirements.</li><li>Supported filings relating to director and auditor appointments, registered-office changes and entity name registration.</li><li>Assisted with drafting MoUs and responses to trademark objections.</li></ul></div></article>
+        <article class="role"><div class="date">January 2025</div><div><h3>Legal Research & Drafting Intern</h3><div class="org">Vyno Legal / Law Sangyan</div><ul><li>Drafted two Special Leave Petitions and one Writ Petition, focusing on issue framing, legal structure and procedural requirements.</li><li>Researched statutory provisions and judicial precedents supporting legal arguments.</li><li>Assisted in structuring substantial questions of law and constitutional arguments.</li></ul></div></article>
+        <article class="role"><div class="date">December 2024 – January 2025</div><div><h3>Legal Intern</h3><div class="org">Chambers of Advocate Manokaran</div><ul><li>Conducted research across civil and criminal law, including the CPC, BNS, BSA and Tamil Nadu Protection of Interests of Depositors Act.</li><li>Analysed precedents and statutory provisions relevant to ongoing matters and case preparation.</li><li>Assisted with petition preparation and legal arguments through case-law and statutory research.</li><li>Observed court proceedings to understand litigation strategy, procedure and advocacy.</li></ul></div></article>
+        <article class="role"><div class="date">May 2024 – July 2024</div><div><h3>Summer Intern – Accounting & Financial Reporting</h3><div class="org">Swaminathan V & Co. Chartered Accountants</div><ul><li>Assisted in preparing financial statements, tax filings and supporting audit documentation.</li><li>Reviewed financial information to understand accounting treatments and financial reporting.</li><li>Supported documentation and compliance processes relating to taxation and audit assignments.</li></ul></div></article>
+        <article class="role"><div class="date">February 2024 – March 2024</div><div><h3>Legal Research Intern</h3><div class="org">The Legal Quorum · Remote</div><ul><li>Produced analytical legal content, including research articles and case summaries.</li><li>Examined statutory provisions and judicial decisions to develop structured legal arguments.</li><li>Applied research methodologies and citation standards in preparing written content.</li></ul></div></article>
+        <article class="role"><div class="date">November 2023 – January 2024</div><div><h3>Legal Intern</h3><div class="org">King & Partridge</div><ul><li>Conducted legal research across contract law, arbitration and statutory interpretation.</li><li>Analysed judicial precedents and statutory provisions relevant to ongoing matters.</li><li>Assisted with research assignments and case preparation.</li></ul></div></article>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">03 / Projects</div><h2>Work in progress. Ideas with room to grow.</h2></div>
+      <p class="lead">This section is reserved for original work that demonstrates how I think, research and apply what I learn. These are planned projects, not completed work. I will develop them after my examinations.</p>
+      <div class="cards">
+        <article class="card"><div class="kicker">Planned project 01</div><h3>M&A transaction case study</h3><p>A hypothetical acquisition covering deal structure, due diligence, contractual protections, approvals and closing.</p><p><strong>To be developed after exams</strong></p></article>
+        <article class="card"><div class="kicker">Planned project 02</div><h3>Listed-company financial analysis</h3><p>An analysis of an Indian listed company using annual reports, financial ratios, business performance and valuation concepts.</p><p><strong>To be developed after exams</strong></p></article>
+        <article class="card"><div class="kicker">Planned project 03</div><h3>Corporate governance review</h3><p>A review of board structure, committee composition, related-party transactions and corporate disclosures.</p><p><strong>To be developed after exams</strong></p></article>
+        <article class="card"><div class="kicker">Planned project 04</div><h3>Legal research note</h3><p>A substantial research piece on an emerging issue in corporate law, technology regulation or financial governance.</p><p><strong>To be developed after exams</strong></p></article>
+        <article class="card"><div class="kicker">Planned project 05</div><h3>Contract review exercise</h3><p>An anonymised educational contract analysis explaining clauses, commercial risks and drafting considerations.</p><p><strong>To be developed after exams</strong></p></article>
+        <article class="card"><div class="kicker">Planned project 06</div><h3>Finance for lawyers</h3><p>A practical explainer connecting financial statements, enterprise value and valuation with corporate transactions.</p><p><strong>To be developed after exams</strong></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">03 / Research</div><h2>Questions worth spending time on.</h2></div>
+      <div class="research-grid">
+        <article class="research-card"><span>Technology & contracts</span><h3>AI and online contracts</h3></article>
+        <article class="research-card"><span>Financial regulation</span><h3>Cryptocurrency governance</h3></article>
+        <article class="research-card"><span>Corporate accountability</span><h3>Greenwashing and consumer protection</h3></article>
+      </div>
+      <div class="project-note">Research titles, publication links, journal details and conference information can be added here. Only include the final published versions and accurate citation details.</div>
+    </div>
+  </section>
+
+  <section class="section" id="interests">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">04 / Interests</div><h2>The areas I keep coming back to.</h2></div>
+      <div class="cards">
+        <article class="card"><div class="kicker">01</div><h3>Corporate law & M&A</h3><p>How businesses are structured, transactions are negotiated and commercial risks are managed.</p></article>
+        <article class="card"><div class="kicker">02</div><h3>Finance & valuation</h3><p>Understanding financial statements, capital allocation and the numbers behind business decisions.</p></article>
+        <article class="card"><div class="kicker">03</div><h3>Governance & regulation</h3><p>The frameworks that support accountability, responsible management and effective corporate oversight.</p></article>
+        <article class="card"><div class="kicker">04</div><h3>Research & writing</h3><p>Exploring emerging legal questions and making complex ideas easier to understand.</p></article>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="reading">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">05 / Reading</div><h2>A bookshelf, not just a reading list.</h2></div>
+      <div class="note"><strong>Books I'm reading, keeping and thinking about.</strong>
+        I want this space to hold books that stay with me — from law, business and history to fiction, poetry and everything in between. I'll add selected titles and occasional reading notes here.
+        <p><a href="https://www.goodreads.com/" target="_blank" rel="noreferrer">Find me on Goodreads ↗</a></p>
+      </div>
+      <p class="project-note">Replace the general Goodreads link with your personal profile URL. This starter site will use a manually curated shelf; automatic Goodreads synchronisation is not included.</p>
+    </div>
+  </section>
+  <section class="section" id="poetry">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">06 / Writing</div><h2>For the things that don't fit into a case note.</h2></div>
+      <div class="about-grid">
+        <p class="lead">A quiet corner for original poems, fragments, observations and the occasional thought that refuses to stay small. Selected poems will be added when I'm ready to share them.</p>
+        <div class="note"><strong>Poetry shelf</strong>Original writing coming soon.</div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="more">
+    <div class="wrap">
+      <div class="section-head"><div class="section-label">07 / More</div><h2>The learning and communities behind the work.</h2></div>
+      <div class="cards">
+        <article class="card"><div class="kicker">Learning</div><h3>Certifications & courses</h3><p>A curated record of relevant courses and credentials, with issuing organisations and completion dates.</p></article>
+        <article class="card"><div class="kicker">Community</div><h3>Volunteering & initiatives</h3><p>Selected volunteering, student initiatives, event work and community contributions.</p></article>
+        <article class="card"><div class="kicker">Endorsements</div><h3>Recommendations</h3><p>A small selection of professional recommendations, shared with the recommender's permission.</p></article>
+      </div>
+      <p class="project-note">These sections will stay selective. Add verified details only, and include recommendations only with the author's permission.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div><div class="section-label">05 / Contact</div><h2>Have an interesting question or project in mind?</h2><p>I'd be glad to connect and exchange ideas.</p></div>
+        <a class="btn primary" href="https://www.linkedin.com/in/karunya-swaminathan/" target="_blank" rel="noreferrer">Find me on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span>© <span id="year"></span> Karunya Swaminathan</span><span>Karunya Speaking · Law · Finance · Governance · Writing</span></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
